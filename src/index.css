@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    @apply antialiased;
+  }
+
+  body {
+    @apply bg-gray-50;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-xl shadow-soft hover:shadow-hover transition-all duration-300;
+  }
+
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-primary-500 text-white hover:bg-primary-600 hover:shadow-lg hover:shadow-primary-500/20;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary-500 text-white hover:bg-secondary-600 hover:shadow-lg hover:shadow-secondary-500/20;
+  }
+
+  .btn-outline {
+    @apply border border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300;
+  }
+
+  .input {
+    @apply w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300;
+  }
+
+  .badge {
+    @apply px-2 py-1 text-xs font-medium rounded-full transition-all duration-300;
+  }
+
+  .badge-success {
+    @apply bg-green-100 text-green-700 hover:bg-green-200;
+  }
+
+  .badge-warning {
+    @apply bg-yellow-100 text-yellow-700 hover:bg-yellow-200;
+  }
+
+  .badge-error {
+    @apply bg-red-100 text-red-700 hover:bg-red-200;
+  }
+
+  .badge-info {
+    @apply bg-blue-100 text-blue-700 hover:bg-blue-200;
+  }
+}
+
+/* Animations */
+.transition-all {
+  @apply transition-transform transition-opacity duration-300 ease-in-out;
+}
+
+/* Custom animations */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Card hover effects */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+}
+
+/* Glass morphism effect */
+.glass {
+  @apply bg-white bg-opacity-70 backdrop-blur-lg;
+}
+
+/* Gradient backgrounds */
+.gradient-primary {
+  @apply bg-gradient-to-r from-primary-500 to-primary-600;
+}
+
+.gradient-secondary {
+  @apply bg-gradient-to-r from-secondary-500 to-secondary-600;
+}
+
+/* Improved scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full hover:bg-gray-400 transition-colors;
+}
+
+/* Focus styles */
+:focus-visible {
+  @apply outline-none ring-2 ring-primary-500 ring-offset-2;
+}
+
+/* Loading states */
+.loading {
+  @apply animate-pulse bg-gray-200;
+}
+
+/* Micro-interactions */
+.hover-lift {
+  @apply transition-transform duration-300 hover:-translate-y-0.5;
+}
+
+.hover-scale {
+  @apply transition-transform duration-300 hover:scale-105;
+}
+
+.hover-glow {
+  @apply transition-shadow duration-300 hover:shadow-lg hover:shadow-primary-500/10;
+}
+
+/* Card layouts */
+.card-grid {
+  @apply grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3;
+}
+
+/* Enhanced typography */
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+/* Improved button states */
+.btn:active {
+  @apply transform scale-95;
+}
+
+/* Enhanced form elements */
+.input:hover {
+  @apply border-gray-300;
+}
+
+.input:focus {
+  @apply ring-offset-2;
+}
+
+/* Card shadows */
+.shadow-soft {
+  box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.07),
+              0 10px 20px -2px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+              0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Enhanced container padding */
+.container-padding {
+  @apply px-4 sm:px-6 lg:px-8;
+}
